@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ButterBall (BUTT) - A meme coin with flavor! The most delicious token on Ethereum." />
+  <title>ButterBall Token (BUTT)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff8ed;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #ffcf66;
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      height: 80px;
+    }
+    h1 {
+      margin: 10px 0 0 0;
+      font-size: 2.2em;
+    }
+    nav {
+      text-align: center;
+      background: #ffd580;
+      padding: 10px 0;
+    }
+    nav a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    .container {
+      padding: 20px;
+      max-width: 960px;
+      margin: auto;
+    }
+    footer {
+      text-align: center;
+      background: #ffcf66;
+      padding: 10px;
+      font-size: 0.9em;
+    }
+    .cta {
+      background: #ffdd99;
+      padding: 20px;
+      text-align: center;
+      margin-top: 30px;
+      border-radius: 8px;
+    }
+    .cta a {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #ffa31a;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    .cta a:hover {
+      background: #e68a00;
+    }
+    #connect-wallet {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ffa31a;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .token-logo {
+      display: block;
+      margin: 20px auto;
+      max-width: 120px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="ButterBall Logo" class="token-logo">
+    <h1>ButterBall Token (BUTT)</h1>
+    <p>The meme coin with flavor – the most delicious token on Ethereum!</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#buy">How to Buy</a>
+    <a href="#links">Links</a>
+  </nav>
+
+  <div class="container">
+    <section id="about">
+      <h2>About ButterBall</h2>
+      <p>ButterBall is a flavorful ERC-20 token designed to spice up the meme coin world. With its fun branding and strong community vibe, BUTT is ready to butter up your portfolio!</p>
+    </section>
+
+    <section id="buy">
+      <h2>How to Buy</h2>
+      <ol>
+        <li>Install MetaMask or another Web3 wallet.</li>
+        <li>Connect to Ethereum Mainnet.</li>
+        <li>Add the contract address: <code>0x7e9ad1b9a8a7c71a82d03b39e727436b1fc79391</code></li>
+        <li>Swap ETH for BUTT on Uniswap.</li>
+      </ol>
+      <button id="connect-wallet">Connect Wallet</button>
+      <p id="wallet-status"></p>
+    </section>
+
+    <section id="links">
+      <h2>Official Links</h2>
+      <ul>
+        <li><a href="https://etherscan.io/token/0x7e9ad1b9a8a7c71a82d03b39e727436b1fc79391" target="_blank">Etherscan</a></li>
+        <li><a href="https://t.me/ButterBallToken" target="_blank">Telegram</a></li>
+        <li><a href="https://twitter.com/ButterBallERC" target="_blank">Twitter</a></li>
+        <li><a href="https://github.com/yourusername/assets" target="_blank">GitHub</a></li>
+      </ul>
+    </section>
+
+    <div class="cta">
+      <h3>Join the $BUTT Revolution</h3>
+      <a href="https://app.uniswap.org/" target="_blank">Buy on Uniswap</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 ButterBall Token. All rights reserved.
+  </footer>
+
+  <script>
+    const connectButton = document.getElementById('connect-wallet');
+    const walletStatus = document.getElementById('wallet-status');
+
+    connectButton.addEventListener('click', async () => {
+      if (typeof window.ethereum !== 'undefined') {
+        try {
+          const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+          walletStatus.textContent = `Connected: ${accounts[0]}`;
+        } catch (error) {
+          walletStatus.textContent = 'Connection request denied.';
+        }
+      } else {
+        walletStatus.textContent = 'MetaMask is not installed or not available.';
+      }
+    });
+  </script>
+</body>
+</html>
